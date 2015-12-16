@@ -6,6 +6,6 @@ module Config
 	:username 		=> YOURUSERNAME,
 	:password 		=> YOURPASSWORD,
 	:playlist_name		=> SYNC_PLAYLIST,
-	:page_size		=> MAX_PAGESIZE
+	:page_size		=> 200
 	}
 end
