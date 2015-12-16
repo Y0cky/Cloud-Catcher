@@ -1,25 +1,20 @@
 require 'soundcloud'
 require 'youtube-dl.rb'
-
-# ---Config---
-Page_size = 200  
-playlist_name = 'sync'
-
+require './config.rb'
 
 # Login
 client = SoundCloud.new({
-  :client_id     => "",
-  :client_secret => "",
-  :username      => '',
-  :password      => ''
+  :client_id 	 => MyConfig::DEFAULT[:client_id],
+  :client_secret => MyConfig::DEFAULT[:client_secret],
+  :username      => MyConfig::DEFAULT[:username],
+  :password      => MyConfig::DEFAULT[:password]
 })
 
-# ---End---
+playlist_name = MyConfig::DEFAULT[:playlist_name]
+Page_size = MyConfig::DEFAULT[:page_size]
 
 # Print Infos
 puts "=====Cloud Catcher===="
-
-# Print Username
 puts "Connected with " + client.get('/me').username, "Playlist: " + playlist_name, ""
 
 # Get Playlist data
